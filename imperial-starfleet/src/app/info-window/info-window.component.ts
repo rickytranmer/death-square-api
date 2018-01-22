@@ -16,7 +16,7 @@ export class InfoWindowComponent implements OnInit {
   	console.log(`finding ${turret}`);
   	this.http.get('http://localhost:3000/api/turret/'+turret)
   		.toPromise()
-  		.then( (res)=>  console.log(res.json()) );
+  		.then( (res)=>  this.dataBanks = res.json() );
   }
 
   ngOnInit() {
