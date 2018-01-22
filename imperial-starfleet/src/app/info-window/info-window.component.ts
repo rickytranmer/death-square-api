@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
-import { Observable } from 'rxjs/Observable';
-
 
 @Component({
   selector: 'app-info-window',
@@ -16,9 +14,9 @@ export class InfoWindowComponent implements OnInit {
 
   findTurret(turret) {
   	console.log(`finding ${turret}`);
-  	this.http.get('localhost:3000/api/turret/'+turret)
+  	this.http.get('http://localhost:3000/api/turret/'+turret)
   		.toPromise()
-  		.then( (res)=>  console.log(res.json().results) );
+  		.then( (res)=>  console.log(res.json()) );
   }
 
   ngOnInit() {
